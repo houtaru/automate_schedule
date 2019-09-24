@@ -1,0 +1,72 @@
+{
+    "schedule": [
+        {
+            "Mon": "",
+            "Tue": "CS202",
+            "Wed": "CS202",
+            "Thu": "",
+            "Fri": "STAT451",
+            "Sat": "SC203",
+            "id": 1
+        },
+        {
+            "Mon": "",
+            "Tue": "CS250",
+            "Wed": "SC203",
+            "Thu": "STAT451",
+            "Fri": "STAT451",
+            "Sat": "SC203",
+            "id": 2
+        },
+        {
+            "Mon": "CS250",
+            "Tue": "",
+            "Wed": "",
+            "Thu": "",
+            "Fri": "CTH003",
+            "Sat": "CS202",
+            "id": 3
+        },
+        {
+            "Mon": "CS250",
+            "Tue": "",
+            "Wed": "",
+            "Thu": "",
+            "Fri": "CTH003",
+            "Sat": "",
+            "id": 4
+      }
+    ],
+    "room": {
+        "CS202": "I.91",
+        "CS250": "B.11A",
+        "SC203": "I.35",
+        "CTH003": "HT.I",
+        "STAT451": "F.203"
+    },
+    "time": {
+        "1": {
+            "start": "07:30",
+            "end": "09:30"
+        },
+        "2": {
+            "start": "09:30",
+            "end": "11:30"
+        },
+        "3": {
+            "start": "13:30",
+            "end": "15:30"
+        },
+        "4": {
+            "start": "15:30",
+            "end": "17:00"
+        }
+    },
+    "description": {
+        "CS202": "Programming Systems",
+        "CS250": "Discrete Structure",
+        "SC203": "Scientific Research Methodologies",
+        "CTH003": "Ho Chi Minh's Ideology",
+        "STAT451": "Applied Statistics for Engineers and Scientists"
+    }
+}

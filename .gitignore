@@ -1,0 +1,6 @@
+log.txt
+credentials.json
+token.pickle
+delete_event.py
+__pycache__
+.vscode
