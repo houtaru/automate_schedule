@@ -31,10 +31,10 @@ def main():
 					description = desc[subject]
 					timezone = 'Asia/Jakarta'
 					start_time = datetime.strptime("2019.10.07 "
-									+ time[str(period['id'])]['start'], "%Y.%m.%d %H:%M") + timedelta(days=cnt)
+						+ time[str(period['id'])]['start'], "%Y.%m.%d %H:%M") + timedelta(days=cnt)
 					end_time = start_time + timedelta(hours=2)
 					
-					event_result = insertEvent(subject, location, description, start_time, end_time, timezone, day)
+					event_result = insertEvent(subject, location, description, start_time, end_time, timezone, day) 
 					print_log(event_result)
 			
 			cnt += 1
