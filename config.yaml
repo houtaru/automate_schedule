@@ -1,0 +1,10 @@
+calendar-name: "APCS Schedule"
+start-date: "2020.03.16"
+last: "12 weeks"
+period: "2 hours"
+timeline:
+    0: "7:30"
+    1: "9:30"
+    3: "13:30"
+    4: "15:30"
+

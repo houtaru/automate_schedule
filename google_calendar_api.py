@@ -39,7 +39,28 @@ class GoogleCalendarClient:
         """
         self._credentials = pickle.load(open('token.pkl', 'rb'))
         self._service = build("calendar", "v3", credentials=self._credentials)
-    
+
+    def load_calendar(self, calendar_name):
+        """ Load calendar id from name.
+        if calendar doesn't exists, create one.
+        Args:
+            calendar_name (str): name of exists calendar.
+        """
+        assert(calendar_name is not None)
+        page_token = None
+        while True:
+            calendar_list = self._service.calendarList().list(pageToken=page_token).execute()
+            for calendar_list_entry in calendar_list['items']:
+                if calendar_list_entry['summary'] == calendar_name:
+                    self._current_calendar_id = calendar_list_entry['id']
+                    return
+
+            page_token = calendar_list.get('nextPageToken')
+            if not page_token:
+                break
+
+        self.insert_calendar(calendar_name)
+
     def insert_calendar(self, summary):
         """ Create new calendar
         Args:
@@ -97,10 +118,10 @@ class GoogleCalendarClient:
             Id of event.
         """
         if event_entry is None:
-            return "Missing event entry!"
+            raise ValueError("Missing event entry!")
 
         event_entry = self._service.events().insert(calendarId=self._current_calendar_id,
-                                    body=event).execute()
+                                    body=event_entry).execute()
         return event_entry.get('id')
     
     def update_event(self, event_id, event_entry):
